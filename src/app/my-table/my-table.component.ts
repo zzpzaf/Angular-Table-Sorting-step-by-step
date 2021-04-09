@@ -35,11 +35,12 @@ const EMPLOYEES: Emp[] = [
  }
 ];
 
+
 // ******************************************************************************************************
 
-const arrDirections = ['asc', 'desc', ''] as const;
-
-//type SortDirection = 'asc' | 'desc' | '';   // Union type with predefined literal values
+const headerFields: string[] = ['First Name','Last Name', 'Age', 'Date Joined'];
+const fieldsNames: string[] = ['firstName','lastName', 'age', 'joinedDate'];
+const arrDirections = ['asc', 'desc', ''] ;
 
 // IT Works: Union type with predefined literal values from array const //Angular version 3.4 and onwards
 type SortDirection = typeof arrDirections[0] | typeof arrDirections[1] | typeof arrDirections[2]; 
@@ -60,22 +61,24 @@ const rotate: {[key in SortDirection]: SortDirection} = { asc: arrDirections[1],
 export class MyTableComponent implements OnInit {
 
   public empls: Emp[] = [];
-  private initempls: readonly Emp[]  = EMPLOYEES; 
+  public hfs: string[] = headerFields;
+  public fns: string[] = fieldsNames;
+  public hfsd: string[] = ['','','',''];
 
 
-  private direction: SortDirection = arrDirections[0]; // Initial is 'asc'--> ascending order,   ''' --> not ordered
-
+  private direction!: SortDirection; // Initial is 'asc'--> ascending order,   ''' --> not ordered
+  private namesArr: string[] = [];
   constructor() { }
 
   ngOnInit(): void {
 
-    //this.initempls = employees;
-    this.empls = EMPLOYEES;  //this.initempls;
-    
+    this.empls = EMPLOYEES;  
+    this.direction = arrDirections[0]
 
   }
 
   onSort(column: string) {
+    this.setSortIndication(column);
     this.empls = this.sort(EMPLOYEES, column, this.direction);
   }
 
@@ -96,5 +99,17 @@ export class MyTableComponent implements OnInit {
     return sortedEmployees; 
   }	
 
+
+  setSortIndication(col: string):void{
+
+    for (var i in this.hfs) {
+      if (col === this.fns[i]) {
+        this.hfsd[i] = (this.direction === '') ? '' : '[' + this.direction + ']';
+      }else {
+        this.hfsd[i] = '';
+      }
+    }
+
+  }
 
 }

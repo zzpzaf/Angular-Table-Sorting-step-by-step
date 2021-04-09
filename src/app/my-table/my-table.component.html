@@ -3,15 +3,14 @@
 
 <div class="container-fluid">
 
-
     <div>
       <table class="table table-striped">
         <thead class="thead-dark">
           <tr>
-            <th scope="col" (click)="onSort('firstName')">First Name</th>
-            <th scope="col" (click)="onSort('lastName')">Last Name</th>
-            <th scope="col" (click)="onSort('age')">Age</th>
-            <th scope="col">Date Joined</th>
+            <th scope="col" (click)="onSort(fns[0])">{{hfs[0]}} {{hfsd[0]}}</th>
+            <th scope="col" (click)="onSort(fns[1])">{{hfs[1]}} {{hfsd[1]}}</th>
+            <th scope="col" (click)="onSort(fns[2])">{{hfs[2]}} {{hfsd[2]}} </th>
+            <th scope="col">{{hfs[3]}}</th>
           </tr>
         </thead>
 
