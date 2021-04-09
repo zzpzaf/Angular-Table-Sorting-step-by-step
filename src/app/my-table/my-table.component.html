@@ -1,0 +1,29 @@
+<p>DEMO-Table Sorting!</p>
+<hr>
+
+<div class="container-fluid">
+
+
+    <div>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" (click)="onSort('firstName')">First Name</th>
+            <th scope="col" (click)="onSort('lastName')">Last Name</th>
+            <th scope="col" (click)="onSort('age')">Age</th>
+            <th scope="col">Date Joined</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let e of empls" >
+            <td scope="row">{{e.firstName}}</td>
+            <td>{{e.lastName}}</td>
+            <td>{{e.age}}</td>
+            <td>{{e.joinedDate | date: 'dd-MM-yyyy'}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+ </div>
