@@ -2,3 +2,14 @@
 th[scope] {
     cursor: pointer;
 }
+
+.colorsortdesc:after {
+    content: 'DESC';
+    color: red;
+}
+.colorsortasc:after {
+    content: 'ASC';
+    color: green;
+}
+
+
