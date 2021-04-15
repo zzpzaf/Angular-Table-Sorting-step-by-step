@@ -3,13 +3,31 @@ th[scope] {
     cursor: pointer;
 }
 
-.colorsortdesc:after {
-    content: 'DESC';
+
+
+.colorsortdesc:before, .colorsortasc:before {
+    font-family: "Font Awesome 5 Free";
+    width: 20px;
+    height: 20px; 
+    float: left; 
+}
+
+.colorsortdesc:before {
+
+    /* content: 'DESC'; */
+    content: "\f309";
     color: red;
 }
-.colorsortasc:after {
-    content: 'ASC';
+.colorsortasc:before {
+    
+    /* content: 'ASC'; */
+    content: "\f30C";
     color: green;
 }
 
+
+.fa-angular{
+    color: red;
+    /* transform: rotate(180deg);  */
+}
 
