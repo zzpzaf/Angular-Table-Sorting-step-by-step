@@ -1,8 +1,11 @@
 
-th[scope] {
+/* th[scope] {
     cursor: pointer;
-}
+} */
 
+.table th:not(:last-child) {
+    cursor: pointer;
+  }
 
 
 .colorsortdesc:before, .colorsortasc:before {

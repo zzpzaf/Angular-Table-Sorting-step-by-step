@@ -1,7 +1,7 @@
 import { Directive, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appMyColsort]',
+  selector: 'th[appMyColsort]',
   host: {'[class.colorsortasc]': 'direct==="asc"',
          '[class.colorsortdesc]': 'direct==="desc"'}
 })
