@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MyTableComponent } from './my-table/my-table.component';
 import { MyColsortDirective } from './my-colsort.directive';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,6 +16,7 @@ import { MyColsortDirective } from './my-colsort.directive';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
